@@ -1,0 +1,3343 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>♡ MEL'S WORLD ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   MCBLING VARIABLES
+========================================================= */
+
+:root {
+    --hot-pink: #ff1493;
+    --pink: #ff69b4;
+    --bubblegum: #ff9ed2;
+    --light-pink: #ffd6ec;
+    --baby-pink: #fff0f8;
+
+    --white: #ffffff;
+    --black: #17000d;
+    --dark-pink: #8d0750;
+
+    --shadow: rgba(112,0,61,.35);
+
+    --max: 1160px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    color: var(--black);
+    font-family: "IBM Plex Mono", monospace;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255,255,255,.9),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,255,255,.75),
+            transparent 17%
+        ),
+        linear-gradient(
+            135deg,
+            #ffb9df,
+            #fff1f9 30%,
+            #ff8fca 65%,
+            #ffd6ed
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   GLITTER
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: 30;
+
+    opacity: .22;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.95) 1px,
+            transparent 1.5px
+        );
+
+    background-size: 17px 17px;
+
+    animation: glitterMove 5s linear infinite;
+}
+
+@keyframes glitterMove {
+    0% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(8px,-8px);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+
+/* =========================================================
+   MCBLING DECORATIONS
+========================================================= */
+
+.bling-bg {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.bling {
+    position: absolute;
+
+    color: white;
+
+    text-shadow:
+        0 0 4px #fff,
+        0 0 9px var(--hot-pink),
+        0 0 18px var(--pink);
+
+    animation:
+        blingFloat 4s ease-in-out infinite;
+}
+
+.bling:nth-child(1) {
+    left: 5%;
+    top: 20%;
+    font-size: 35px;
+}
+
+.bling:nth-child(2) {
+    left: 88%;
+    top: 13%;
+    font-size: 25px;
+    animation-delay: .8s;
+}
+
+.bling:nth-child(3) {
+    left: 8%;
+    top: 70%;
+    font-size: 25px;
+    animation-delay: 1.2s;
+}
+
+.bling:nth-child(4) {
+    left: 91%;
+    top: 65%;
+    font-size: 38px;
+    animation-delay: 1.8s;
+}
+
+.bling:nth-child(5) {
+    left: 45%;
+    top: 8%;
+    font-size: 22px;
+    animation-delay: .5s;
+}
+
+.bling:nth-child(6) {
+    left: 53%;
+    top: 90%;
+    font-size: 30px;
+    animation-delay: 2s;
+}
+
+@keyframes blingFloat {
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.9);
+
+        opacity: .65;
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(10deg)
+            scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   INTRO SCREEN
+========================================================= */
+
+#intro-container {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #000;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transition:
+        opacity .9s ease,
+        visibility .9s ease;
+}
+
+
+/* =========================================================
+   INTRO VIDEO
+========================================================= */
+
+#intro-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    background: #000;
+
+    filter: blur(14px);
+
+    transform: scale(1.06);
+
+    transition:
+        filter 1.2s cubic-bezier(.2,.8,.2,1),
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* Video becomes clear after clicking */
+
+#intro-container.started #intro-video {
+    filter: blur(0);
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   DARK GLASS OVERLAY
+========================================================= */
+
+.intro-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.45)
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+/* disappears after click */
+
+#intro-container.started .intro-overlay {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRID EFFECT
+========================================================= */
+
+.intro-grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: .45;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 75%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 75%
+        );
+
+    animation:
+        gridMove 10s linear infinite;
+
+    transition:
+        opacity 1s ease;
+}
+
+@keyframes gridMove {
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(55px,55px);
+    }
+}
+
+#intro-container.started .intro-grid {
+    opacity: 0;
+}
+
+
+/* =========================================================
+   INTRO EMOJIS
+========================================================= */
+
+.intro-emojis {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.intro-emoji {
+    position: absolute;
+
+    color: white;
+
+    font-size: clamp(24px, 4vw, 48px);
+
+    text-shadow:
+        0 0 6px white,
+        0 0 14px var(--hot-pink),
+        0 0 28px var(--pink);
+
+    animation:
+        introEmojiFloat 4s ease-in-out infinite;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.intro-emoji:nth-child(1) {
+    left: 12%;
+    top: 18%;
+}
+
+.intro-emoji:nth-child(2) {
+    right: 13%;
+    top: 17%;
+
+    animation-delay: .5s;
+}
+
+.intro-emoji:nth-child(3) {
+    left: 17%;
+    bottom: 18%;
+
+    animation-delay: 1s;
+}
+
+.intro-emoji:nth-child(4) {
+    right: 14%;
+    bottom: 20%;
+
+    animation-delay: 1.5s;
+}
+
+.intro-emoji:nth-child(5) {
+    left: 46%;
+    top: 12%;
+
+    animation-delay: .8s;
+}
+
+.intro-emoji:nth-child(6) {
+    left: 50%;
+    bottom: 12%;
+
+    animation-delay: 1.8s;
+}
+
+@keyframes introEmojiFloat {
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.9);
+
+        opacity: .55;
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(8deg)
+            scale(1.12);
+
+        opacity: 1;
+    }
+}
+
+#intro-container.started .intro-emoji {
+    opacity: 0;
+
+    transform:
+        scale(1.5)
+        translateY(-15px);
+}
+
+
+/* =========================================================
+   CLICK TO ENTER TEXT
+========================================================= */
+
+#click-to-enter {
+    position: relative;
+
+    z-index: 10;
+
+    color: white;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: clamp(
+        .7rem,
+        1.5vw,
+        .95rem
+    );
+
+    font-weight: 700;
+
+    letter-spacing: .3em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px var(--hot-pink),
+        0 0 25px var(--pink);
+
+    animation:
+        enterPulse 2s ease-in-out infinite;
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+#click-to-enter:hover {
+    transform: scale(1.06);
+
+    text-shadow:
+        0 0 8px white,
+        0 0 18px var(--hot-pink),
+        0 0 35px var(--pink);
+}
+
+#intro-container.started #click-to-enter {
+    opacity: 0;
+
+    transform:
+        scale(1.15)
+        translateY(-8px);
+
+    pointer-events: none;
+}
+
+@keyframes enterPulse {
+    0%,100% {
+        opacity: .65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   SKIP BUTTON
+========================================================= */
+
+#skip-button {
+    position: fixed;
+
+    top: 22px;
+    right: 22px;
+
+    z-index: 10001;
+
+    display: none;
+
+    padding: 9px 16px;
+
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.48),
+            rgba(255,105,180,.34)
+        );
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    color: white;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .04em;
+
+    cursor: pointer;
+
+    opacity: .72;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.7);
+
+    text-shadow:
+        0 1px 3px rgba(100,0,50,.7);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        background .2s ease;
+}
+
+#skip-button:hover {
+    opacity: 1;
+
+    transform:
+        translateY(-2px);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.68),
+            rgba(255,105,180,.5)
+        );
+}
+
+#skip-button:active {
+    transform:
+        translateY(0)
+        scale(.96);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.shell {
+    width:
+        min(
+            var(--max),
+            calc(100% - 28px)
+        );
+
+    margin: auto;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+    position: sticky;
+
+    top: 12px;
+
+    z-index: 100;
+
+    margin-top: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 17px;
+
+    border: 3px solid white;
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.96),
+            rgba(255,170,215,.96) 45%,
+            rgba(255,72,169,.95)
+        );
+
+    box-shadow:
+        inset 0 2px 0 white,
+        inset 0 -4px 0 rgba(170,0,85,.22),
+        0 5px 0 #a40b5d,
+        0 10px 25px rgba(104,0,57,.22);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-mark {
+    width: 28px;
+    height: 28px;
+
+    transform: rotate(45deg);
+
+    border: 3px solid white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #ff8dca,
+            #ff1493
+        );
+
+    box-shadow:
+        0 0 8px white,
+        0 0 15px var(--hot-pink);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text strong {
+    font-family: "Pacifico", cursive;
+
+    font-size: 1.25rem;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 0 #b00061,
+        0 0 5px #ff1493;
+}
+
+.brand-text span {
+    font-size: .55rem;
+
+    color: #7b0745;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav {
+    display: flex;
+
+    gap: 5px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    padding: 8px 10px;
+
+    border: 2px solid white;
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff9fd3,
+            #ff299d
+        );
+
+    box-shadow:
+        inset 0 1px 2px white,
+        0 2px 0 #a5095d;
+
+    text-shadow:
+        1px 1px 0 #a0005b;
+
+    transition: .18s ease;
+}
+
+nav a:hover {
+    transform:
+        translateY(-2px)
+        rotate(-2deg);
+
+    background:
+        linear-gradient(
+            180deg,
+            white,
+            #ff8dca
+        );
+
+    color: #c4006e;
+
+    text-shadow: none;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.mini-marquee {
+    margin-top: 20px;
+
+    padding: 8px 15px;
+
+    overflow: hidden;
+
+    border: 2px solid white;
+    border-radius: 9px;
+
+    background: #111;
+
+    color: #ff8dcc;
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    box-shadow:
+        3px 3px 0 #a9005e,
+        0 0 15px rgba(255,20,147,.2);
+
+    text-align: center;
+}
+
+.mini-marquee span {
+    display: inline-block;
+
+    animation:
+        marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.panel {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.97),
+            rgba(255,222,239,.97) 45%,
+            rgba(255,157,210,.96)
+        );
+
+    border: 3px solid white;
+    border-radius: 15px;
+
+    box-shadow:
+        inset 0 2px 0 white,
+        inset 0 -4px 0 rgba(185,0,98,.12),
+        7px 7px 0 rgba(130,0,72,.22),
+        0 0 25px rgba(255,20,147,.16);
+
+    overflow: hidden;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease;
+}
+
+.panel::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 8px;
+    right: 13px;
+
+    color: white;
+
+    font-size: 19px;
+
+    text-shadow:
+        0 0 4px white,
+        0 0 10px var(--hot-pink);
+}
+
+.panel::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1493,
+            #fff,
+            #ff69b4,
+            #fff,
+            #ff1493
+        );
+}
+
+.panel:hover {
+    transform:
+        translateY(-5px)
+        rotate(-.4deg);
+
+    box-shadow:
+        inset 0 2px 0 white,
+        inset 0 -4px 0 rgba(185,0,98,.12),
+        9px 9px 0 rgba(130,0,72,.22),
+        0 0 35px rgba(255,20,147,.28);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 85vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap: 28px;
+
+    align-items: center;
+
+    padding:
+        55px 0 35px;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.hero-copy {
+    padding: 45px 40px;
+
+    transform: rotate(-1deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #ffdff0 45%,
+            #ff91c8
+        );
+
+    border: 4px solid white;
+    border-radius: 22px;
+
+    box-shadow:
+        inset 0 3px 0 white,
+        10px 10px 0 rgba(126,0,70,.2),
+        0 0 30px rgba(255,20,147,.2);
+
+    position: relative;
+}
+
+.hero-copy::before {
+    content:
+        "♡ WELCOME 2 MEL'S WORLD ♡";
+
+    position: absolute;
+
+    top: 13px;
+    left: 20px;
+
+    font-family: "Pacifico", cursive;
+
+    color: #ff1493;
+
+    font-size: .75rem;
+
+    text-shadow:
+        1px 1px 0 white;
+}
+
+.hero-copy::after {
+    content: "★";
+
+    position: absolute;
+
+    bottom: 12px;
+    right: 18px;
+
+    color: white;
+
+    font-size: 35px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ff1493;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.eyebrow {
+    margin-top: 22px;
+
+    color: #9a0755;
+
+    font-size: .67rem;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 8px 0 0;
+
+    font-family: "Pacifico", cursive;
+
+    font-size:
+        clamp(
+            4rem,
+            9vw,
+            8rem
+        );
+
+    line-height: .95;
+
+    color: #ff1493;
+
+    -webkit-text-stroke:
+        2px white;
+
+    text-shadow:
+        4px 5px 0 #c30070,
+        7px 8px 0 rgba(255,255,255,.9),
+        0 0 15px #ff69b4;
+}
+
+.lead {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #4e1838;
+
+    font-size: .87rem;
+
+    line-height: 1.9;
+}
+
+.highlight {
+    color: #e50082;
+
+    font-weight: 700;
+
+    text-shadow:
+        1px 1px 0 white;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.actions {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 27px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 17px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: .67rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    border: 3px solid white;
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffb7dc,
+            #ff4aaa 48%,
+            #e9007d
+        );
+
+    box-shadow:
+        inset 0 2px 2px white,
+        0 4px 0 #a00758,
+        0 0 12px rgba(255,20,147,.2);
+
+    text-shadow:
+        1px 1px 0 #a0005b;
+
+    transition: .18s ease;
+}
+
+.btn:hover {
+    transform:
+        translateY(-3px)
+        rotate(-2deg);
+
+    background:
+        linear-gradient(
+            180deg,
+            white,
+            #ff91c9
+        );
+
+    color: #c00069;
+
+    text-shadow: none;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-card {
+    padding: 25px;
+
+    text-align: center;
+
+    transform: rotate(1.5deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #ffd9ed,
+            #ff83c3
+        );
+}
+
+.card-title {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: #9a0755;
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.online {
+    padding: 4px 7px;
+
+    color: white;
+
+    border-radius: 6px;
+
+    background: #e9007d;
+
+    box-shadow:
+        0 2px 0 #9b0756;
+}
+
+.profile-image {
+    width: 190px;
+    height: 190px;
+
+    margin:
+        5px auto 24px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border: 5px solid white;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 3px #ff69b4,
+        7px 7px 0 rgba(130,0,72,.18),
+        0 0 25px rgba(255,20,147,.4);
+
+    transform: rotate(-3deg);
+
+    transition: .25s ease;
+}
+
+.profile-image:hover {
+    transform:
+        rotate(3deg)
+        scale(1.04);
+}
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+.data-list {
+    display: grid;
+    gap: 8px;
+}
+
+.data {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    border: 2px solid white;
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.9),
+            rgba(255,170,216,.75)
+        );
+
+    font-size: .68rem;
+
+    box-shadow:
+        0 2px 0 rgba(156,0,82,.15);
+}
+
+.data span:first-child {
+    color: #9a0755;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.data strong {
+    color: #4d1034;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   INTERNET BOX
+========================================================= */
+
+.internet-box {
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border: 3px double white;
+
+    background: #181018;
+
+    color: #ff8dcc;
+
+    text-align: center;
+
+    font-size: .61rem;
+
+    line-height: 1.7;
+
+    box-shadow:
+        inset 0 0 0 2px #ff4bad;
+}
+
+.internet-box strong {
+    color: white;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    padding: 65px 0 0;
+
+    position: relative;
+}
+
+.section-head {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+
+    padding-left: 7px;
+}
+
+.section-index {
+    padding: 6px 9px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff9fd4,
+            #ed007e
+        );
+
+    border: 2px solid white;
+    border-radius: 7px;
+
+    font-size: .6rem;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 2px 0 #a00657;
+}
+
+h2 {
+    margin: 0;
+
+    font-family: "Pacifico", cursive;
+
+    color: #d60078;
+
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            2.7rem
+        );
+
+    text-shadow:
+        2px 2px 0 white,
+        4px 4px 0 rgba(190,0,100,.2);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap: 23px;
+}
+
+.copy-panel {
+    padding: 29px;
+}
+
+.copy-panel:first-child {
+    transform: rotate(-.6deg);
+}
+
+.copy-panel:last-child {
+    transform: rotate(.7deg);
+}
+
+.copy-panel p {
+    color: #521839;
+
+    line-height: 1.9;
+
+    font-size: .86rem;
+}
+
+
+/* =========================================================
+   INTERESTS
+========================================================= */
+
+.interests-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 17px;
+}
+
+.interest {
+    padding: 24px;
+
+    min-height: 175px;
+}
+
+.interest:nth-child(1) {
+    transform: rotate(-1deg);
+}
+
+.interest:nth-child(2) {
+    transform: rotate(.7deg);
+}
+
+.interest:nth-child(3) {
+    transform: rotate(-.5deg);
+}
+
+.interest:nth-child(4) {
+    transform: rotate(.8deg);
+}
+
+.interest:nth-child(5) {
+    transform: rotate(-.7deg);
+}
+
+.interest:nth-child(6) {
+    transform: rotate(.6deg);
+}
+
+.interest:hover {
+    transform:
+        translateY(-7px)
+        rotate(0deg)
+        scale(1.015);
+}
+
+.interest-number {
+    color: #e50082;
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+
+    letter-spacing: .1em;
+}
+
+.interest h3 {
+    margin:
+        0 0 10px;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 1.25rem;
+
+    color: #d60078;
+
+    text-shadow:
+        1px 1px 0 white;
+}
+
+.interest p {
+    margin: 0;
+
+    color: #5a1b3d;
+
+    font-size: .72rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.image-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr 1fr;
+
+    gap: 14px;
+}
+
+.image-box {
+    position: relative;
+
+    min-height: 230px;
+
+    overflow: hidden;
+
+    border: 5px solid white;
+    border-radius: 12px;
+
+    background: #ffb5da;
+
+    box-shadow:
+        5px 5px 0 rgba(128,0,68,.2),
+        0 0 15px rgba(255,20,147,.15);
+
+    transition: .25s ease;
+}
+
+.image-box:first-child {
+    grid-row: span 2;
+}
+
+.image-box:nth-child(2) {
+    transform: rotate(1.2deg);
+}
+
+.image-box:nth-child(3) {
+    transform: rotate(-1.1deg);
+}
+
+.image-box:nth-child(4) {
+    transform: rotate(.8deg);
+}
+
+.image-box:hover {
+    transform:
+        translateY(-6px)
+        rotate(0deg)
+        scale(1.015);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.06);
+
+    filter:
+        saturate(1.15)
+        brightness(1.04);
+}
+
+.image-label {
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+
+    padding: 7px 10px;
+
+    color: white;
+
+    font-size: .6rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    border: 2px solid white;
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff9ed3,
+            #ed007e
+        );
+
+    box-shadow:
+        0 2px 0 #9b0756;
+
+    text-shadow:
+        1px 1px 0 #970052;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 17px;
+}
+
+.skill {
+    padding: 27px;
+
+    min-height: 170px;
+}
+
+.skill:nth-child(odd) {
+    transform: rotate(-.7deg);
+}
+
+.skill:nth-child(even) {
+    transform: rotate(.7deg);
+}
+
+.skill:hover {
+    transform:
+        translateY(-6px)
+        rotate(0deg);
+}
+
+.skill h3 {
+    margin:
+        0 0 12px;
+
+    font-family: "Pacifico", cursive;
+
+    color: #d60078;
+
+    font-size: 1.25rem;
+
+    text-shadow:
+        1px 1px 0 white;
+}
+
+.skill p {
+    color: #571a3b;
+
+    font-size: .76rem;
+
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 23px;
+}
+
+.contact {
+    padding: 27px;
+}
+
+.contact:nth-child(1) {
+    transform: rotate(-.7deg);
+}
+
+.contact:nth-child(2) {
+    transform: rotate(.7deg);
+}
+
+.contact-row {
+    display: grid;
+
+    grid-template-columns:
+        90px 1fr;
+
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        2px dashed
+        rgba(190,0,100,.22);
+
+    font-size: .7rem;
+}
+
+.contact-row span:first-child {
+    color: #d60078;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.contact-row span:last-child {
+    color: #511637;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: 80px;
+
+    padding:
+        28px 10px
+        45px;
+
+    border-top:
+        3px dotted
+        rgba(155,0,83,.3);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color: #7e2454;
+
+    font-size: .61rem;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    text-align: center;
+}
+
+footer span:first-child {
+    color: #d60078;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(25px)
+        rotate(-1deg);
+
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        rotate(0deg);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .hero,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interests-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .image-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .image-box:first-child {
+        grid-row: auto;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .bling:nth-child(1),
+    .bling:nth-child(2),
+    .bling:nth-child(3),
+    .bling:nth-child(4) {
+        display: none;
+    }
+
+    .intro-emoji:nth-child(1) {
+        left: 7%;
+    }
+
+    .intro-emoji:nth-child(2) {
+        right: 7%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .shell {
+        width:
+            calc(100% - 18px);
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero-copy {
+        padding: 30px 23px;
+    }
+
+    .interests-grid,
+    .skills-grid,
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .mini-marquee {
+        font-size: .52rem;
+    }
+
+    .intro-grid {
+        background-size: 38px 38px;
+    }
+
+    #click-to-enter {
+        font-size: .65rem;
+
+        letter-spacing: .2em;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     INTRO VIDEO / ENTER SCREEN
+===================================================== -->
+
+<div id="intro-container">
+
+    <video
+        id="intro-video"
+        src="Video.mp4"
+        playsinline
+        preload="auto"
+        muted>
+    </video>
+
+
+    <div class="intro-overlay">
+
+        <div class="intro-grid"></div>
+
+
+        <div class="intro-emojis">
+
+            <div class="intro-emoji">✦</div>
+            <div class="intro-emoji">♡</div>
+            <div class="intro-emoji">★</div>
+            <div class="intro-emoji">✧</div>
+            <div class="intro-emoji">💎</div>
+            <div class="intro-emoji">♡</div>
+
+        </div>
+
+
+        <div
+            id="click-to-enter"
+            role="button"
+            tabindex="0">
+
+            CLICK TO ENTER
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SKIP BUTTON
+===================================================== -->
+
+<button
+    id="skip-button"
+    aria-label="Skip intro">
+
+    ✦ SKIP ✦
+
+</button>
+
+
+<!-- =====================================================
+     MCBLING DECORATIONS
+===================================================== -->
+
+<div class="bling-bg">
+
+    <div class="bling">✦</div>
+    <div class="bling">♡</div>
+    <div class="bling">★</div>
+    <div class="bling">✧</div>
+    <div class="bling">💎</div>
+    <div class="bling">♡</div>
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio
+    id="backgroundMusic"
+    src="Miside.mp3"
+    loop>
+</audio>
+
+
+<!-- =====================================================
+     WEBSITE
+===================================================== -->
+
+<div class="shell">
+
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-mark"></div>
+
+        <div class="brand-text">
+
+            <strong>MEL ♡</strong>
+
+            <span>
+                PERSONAL WEBSITE
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#interests">Likes</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#skills">Stuff</a>
+        <a href="#contact">Find Me</a>
+
+    </nav>
+
+</header>
+
+
+<div class="mini-marquee">
+
+    <span>
+        ✦♡ WELCOME TO MEL'S WORLD ♡✦
+        &nbsp;&nbsp; ★
+        &nbsp;&nbsp; THANKS FOR VISITING!!
+        &nbsp;&nbsp; 💎
+        &nbsp;&nbsp; ♡ STAY CUTE ♡
+        &nbsp;&nbsp; ✦
+    </span>
+
+</div>
+
+
+<main>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section
+    id="home"
+    class="hero">
+
+
+    <div
+        class="hero-copy reveal">
+
+        <div class="eyebrow">
+            ✦ PERSONAL PROFILE // MEL ✦
+        </div>
+
+        <h1>
+            MEL
+        </h1>
+
+        <p class="lead">
+
+            yo I'm <span class="highlight">Mel ♡</span>.
+
+            I'm basically a chaotic little guy who likes
+            talking way too much, making stupid jokes,
+            playing games with people and just hanging
+            around doing whatever.
+
+            I'm into a bunch of random stuff too —
+            <span class="highlight">
+                voice acting, singing, music, games,
+                going out and probably anything fun
+            </span>
+            if the mood is right.
+
+            I'm just here trying to enjoy life,
+            meet cool people and become a better version
+            of myself along the way :P
+
+        </p>
+
+
+        <div class="actions">
+
+            <a
+                class="btn"
+                href="#about">
+                ♡ WHO AM I?
+            </a>
+
+            <a
+                class="btn"
+                href="#interests">
+                ✦ MY LIKES
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="panel profile-card reveal">
+
+        <div class="card-title">
+
+            <span>
+                ♡ PROFILE DATA ♡
+            </span>
+
+            <span class="online">
+                ● ONLINE
+            </span>
+
+        </div>
+
+
+        <img
+            class="profile-image"
+            src="pfp.png"
+            alt="Mel's profile picture">
+
+
+        <div class="data-list">
+
+            <div class="data">
+                <span>Name</span>
+                <strong>Mel</strong>
+            </div>
+
+            <div class="data">
+                <span>Pronouns</span>
+                <strong>He / Him</strong>
+            </div>
+
+            <div class="data">
+                <span>Age</span>
+                <strong>17</strong>
+            </div>
+
+            <div class="data">
+                <span>Personality</span>
+                <strong>INTJ-T</strong>
+            </div>
+
+            <div class="data">
+                <span>Birthday</span>
+                <strong>02 DEC</strong>
+            </div>
+
+            <div class="data">
+                <span>Status</span>
+                <strong>Doing My Thing ♡</strong>
+            </div>
+
+        </div>
+
+
+        <div class="internet-box">
+
+            ♡ CURRENT STATUS ♡<br>
+
+            <strong>
+                ✦ probably playing games ✦
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    id="about"
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            01 // ♡
+        </span>
+
+        <h2>
+            About Me
+        </h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <article class="panel copy-panel">
+
+            <p>
+                I'm Mel. I'm chaotic, weird, funny and
+                apparently sweet?? At least that's what
+                people tell me lol.
+            </p>
+
+            <p>
+                A lot of people end up treating me like
+                their older brother which is honestly
+                kinda funny considering I'm soft as hell.
+            </p>
+
+            <p>
+                I like being around people I care about,
+                talking about random shit and just making
+                people laugh when I can.
+            </p>
+
+            <p>
+                Also apparently I'm a freak demon like
+                Shidou 😭 but that's a whole different
+                conversation.
+            </p>
+
+        </article>
+
+
+        <aside class="panel copy-panel">
+
+            <div class="data-list">
+
+                <div class="data">
+                    <span>Vibe</span>
+                    <strong>Chaotic ♡</strong>
+                </div>
+
+                <div class="data">
+                    <span>Social Mode</span>
+                    <strong>Talkative</strong>
+                </div>
+
+                <div class="data">
+                    <span>Energy</span>
+                    <strong>Depends lol</strong>
+                </div>
+
+                <div class="data">
+                    <span>Comfort</span>
+                    <strong>Bed + My Stuff</strong>
+                </div>
+
+                <div class="data">
+                    <span>Current Quest</span>
+                    <strong>Be Better :P</strong>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LIKES
+===================================================== -->
+
+<section
+    id="interests"
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            02 // ✦
+        </span>
+
+        <h2>
+            Things I Like
+        </h2>
+
+    </div>
+
+
+    <div class="interests-grid">
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                01 / PEOPLE ♡
+            </div>
+
+            <h3>
+                My People
+            </h3>
+
+            <p>
+                I really like talking, hanging out,
+                playing games together and doing stuff
+                that makes me feel closer to people.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                02 / CAT ♡
+            </div>
+
+            <h3>
+                My Cats
+            </h3>
+
+            <p>
+                Did I mention my cat? Because I REALLY
+                like my cats. They're literally one of
+                my favourite things ever.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                03 / GAMES ✦
+            </div>
+
+            <h3>
+                Games
+            </h3>
+
+            <p>
+                Spider-Man Remastered, Roblox,
+                Trailmakers, Minecraft, Bleach Rebirth
+                of Souls, Warhammer and whatever else
+                catches my attention.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                04 / MEDIA ✧
+            </div>
+
+            <h3>
+                Anime & Stuff
+            </h3>
+
+            <p>
+                I'm not a massive anime watcher but I do
+                like Blue Lock, Tonikawa, Mushoku Tensei,
+                The Promised Neverland and Reincarnated
+                as a Slime.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                05 / CREATIVE ♡
+            </div>
+
+            <h3>
+                Creative Stuff
+            </h3>
+
+            <p>
+                Voice acting, singing, listening to music,
+                making things and randomly learning
+                something because I felt like it.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                06 / CUTE THINGS ☆
+            </div>
+
+            <h3>
+                Cute Stuff
+            </h3>
+
+            <p>
+                Cute things, flowers, my bed, my closet
+                and my Miranda because I just wanted
+                to mention her okay 😭
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section
+    id="gallery"
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            03 // 📸
+        </span>
+
+        <h2>
+            My Gallery ♡
+        </h2>
+
+    </div>
+
+
+    <div class="image-grid">
+
+        <div class="image-box">
+
+            <img
+                src="image1.jpg"
+                alt="Personal image">
+
+            <div class="image-label">
+                Main ♡
+            </div>
+
+        </div>
+
+
+        <div class="image-box">
+
+            <img
+                src="image2.jpg"
+                alt="Personal image">
+
+            <div class="image-label">
+                Random
+            </div>
+
+        </div>
+
+
+        <div class="image-box">
+
+            <img
+                src="image3.jpg"
+                alt="Personal image">
+
+            <div class="image-label">
+                Archive ✦
+            </div>
+
+        </div>
+
+
+        <div class="image-box">
+
+            <img
+                src="image4.jpg"
+                alt="Profile">
+
+            <div class="image-label">
+                Me ♡
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GOALS / STUFF
+===================================================== -->
+
+<section
+    id="skills"
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            04 // ☆
+        </span>
+
+        <h2>
+            What I'm Up To
+        </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <article class="panel skill">
+
+            <h3>
+                Voice Acting ✦
+            </h3>
+
+            <p>
+                I wanna get better at voice acting,
+                experimenting with different voices
+                and actually getting good at this
+                instead of just messing around lol.
+            </p>
+
+        </article>
+
+
+        <article class="panel skill">
+
+            <h3>
+                Becoming Better ♡
+            </h3>
+
+            <p>
+                One of my biggest goals is honestly
+                just becoming a better person and
+                learning how to treat people better.
+            </p>
+
+        </article>
+
+
+        <article class="panel skill">
+
+            <h3>
+                House Husband Arc ✧
+            </h3>
+
+            <p>
+                Learning how to cook, fix things,
+                take care of stuff and eventually
+                become the best house husband I can be.
+            </p>
+
+        </article>
+
+
+        <article class="panel skill">
+
+            <h3>
+                Learning Stuff ☆
+            </h3>
+
+            <p>
+                I like figuring out how things work,
+                trying random projects and picking up
+                new skills whenever something interests me.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BEFORE YOU DM
+===================================================== -->
+
+<section
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            05 // 💬
+        </span>
+
+        <h2>
+            Before You DM
+        </h2>
+
+    </div>
+
+
+    <div class="panel copy-panel">
+
+        <p>
+            I'm really chaotic and weird but like,
+            not in the sexual way 😭.
+        </p>
+
+        <p>
+            Just know how to text first until I'm
+            comfortable. I really like people who
+            actually talk instead of giving me
+            one-word replies every 5 minutes.
+        </p>
+
+        <p>
+            PLEASE give me something to work with,
+            give long responses and tell me if you're
+            down to VC sometimes because I'm bored
+            literally all the time anyway 😭.
+        </p>
+
+        <p>
+            I usually just wanna talk, play games,
+            VC, go out or do literally anything that
+            gets us closer.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RELATIONSHIPS / PERSONAL
+===================================================== -->
+
+<section
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            06 // ♡
+        </span>
+
+        <h2>
+            Random Mel Lore
+        </h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <article class="panel copy-panel">
+
+            <p>
+                I have a girlfriend and she's so
+                beautiful I love you smmsmsmsmsms 😭♡
+            </p>
+
+            <p>
+                I really enjoy doing things with people
+                I care about. Playing games, VCing,
+                going out, talking about random stuff —
+                honestly anything works if we're having fun.
+            </p>
+
+            <p>
+                I also really like cooking for people
+                who enjoy food because seeing someone
+                happy after I made something for them
+                is actually one of my favourite feelings.
+            </p>
+
+        </article>
+
+
+        <aside class="panel copy-panel">
+
+            <p>
+                Apparently I make cute noises when I
+                sleep. Allegedly.
+            </p>
+
+            <p>
+                I apparently have three amazing cute
+                cats called MJ, Jacob and JJ.
+            </p>
+
+            <p>
+                I also have an avocado plushie that
+                I apparently hug.
+            </p>
+
+            <p>
+                All of these allegations were provided
+                by Miranda btw 😭.
+            </p>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISLIKES
+===================================================== -->
+
+<section
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            07 // 🚫
+        </span>
+
+        <h2>
+            Things I Don't Like
+        </h2>
+
+    </div>
+
+
+    <div class="interests-grid">
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                01 / PEOPLE
+            </div>
+
+            <h3>
+                Rude People
+            </h3>
+
+            <p>
+                If you're rude for literally no reason,
+                we're probably not gonna get along.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                02 / CONVOS
+            </div>
+
+            <h3>
+                Dry Texting
+            </h3>
+
+            <p>
+                Please don't make me carry the entire
+                conversation by myself 😭.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                03 / AWKWARD
+            </div>
+
+            <h3>
+                Being Ignored
+            </h3>
+
+            <p>
+                Leaving me on seen forever or suddenly
+                barely talking when we used to talk a lot
+                is gonna make me wonder what happened.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DNI
+===================================================== -->
+
+<section
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            08 // ⚠
+        </span>
+
+        <h2>
+            DNI
+        </h2>
+
+    </div>
+
+
+    <div class="panel copy-panel">
+
+        <p>
+            Average DNI honestly 😭.
+        </p>
+
+        <p>
+            Toxic people, sexist people, weirdos,
+            perverts and people who are just looking
+            for reasons to start shit.
+        </p>
+
+        <p>
+            Also politics. I really don't wanna turn
+            my little corner of the internet into a
+            political debate.
+        </p>
+
+        <p>
+            And if you're gonna be toxic, at least
+            don't be a massive double-standard person.
+            I don't like that shit.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    id="contact"
+    class="reveal">
+
+    <div class="section-head">
+
+        <span class="section-index">
+            09 // ♡
+        </span>
+
+        <h2>
+            Find Me
+        </h2>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <div class="panel contact">
+
+            <div class="contact-row">
+
+                <span>
+                    Discord
+                </span>
+
+                <span>
+                    melsocool
+                </span>
+
+            </div>
+
+
+            <div class="contact-row">
+
+                <span>
+                    Roblox
+                </span>
+
+                <span>
+                    1ts_Ryota
+                </span>
+
+            </div>
+
+
+            <div class="contact-row">
+
+                <span>
+                    Steam
+                </span>
+
+                <span>
+                    Litterally_Mel
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel contact">
+
+            <p style="
+                color:#541638;
+                font-size:.82rem;
+                line-height:1.9;
+                margin-top:0;
+            ">
+
+                If you're here and actually wanna
+                talk to me, just say hi.
+
+                I genuinely just like talking to people.
+
+            </p>
+
+            <p style="
+                color:#8a2b5d;
+                font-size:.72rem;
+                line-height:1.8;
+            ">
+
+                If I'm comfortable with you,
+                good luck getting me to shut up.
+
+                heh.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="internet-box" style="
+        margin-top:25px;
+        color:#ff9dd1;
+    ">
+
+        ✦ ♡ THANK YOU FOR VISITING MEL'S WORLD ♡ ✦<br>
+
+        <strong>
+            YOU ARE NOW OFFICIALLY ONE OF THE COOL PEOPLE
+        </strong>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <span>
+        ♡ MEL // PERSONAL WORLD
+    </span>
+
+    <span>
+        2026 // STILL FIGURING THINGS OUT ✦
+    </span>
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const introContainer =
+    document.getElementById("intro-container");
+
+const introVideo =
+    document.getElementById("intro-video");
+
+const clickToEnter =
+    document.getElementById("click-to-enter");
+
+const skipButton =
+    document.getElementById("skip-button");
+
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+/*
+   Lock the page completely while the intro is active.
+   The intro itself is already covering the entire website,
+   so there is no flash of the website underneath.
+*/
+
+document.documentElement.style.overflow = "hidden";
+document.body.style.overflow = "hidden";
+
+window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant"
+});
+
+
+introVideo.pause();
+introVideo.currentTime = 0;
+
+introVideo.muted = true;
+introVideo.volume = 0;
+
+backgroundMusic.pause();
+backgroundMusic.currentTime = 0;
+backgroundMusic.loop = true;
+
+
+let introStarted = false;
+let introFinished = false;
+let musicStarted = false;
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+function startMusic() {
+
+    if (musicStarted) {
+        return;
+    }
+
+    backgroundMusic.volume = 0.35;
+
+    const playPromise =
+        backgroundMusic.play();
+
+    if (playPromise !== undefined) {
+
+        playPromise
+            .then(() => {
+
+                musicStarted = true;
+
+            })
+            .catch(() => {
+
+                musicStarted = false;
+
+            });
+
+    }
+
+}
+
+
+/* =========================================================
+   START INTRO
+========================================================= */
+
+function startIntro() {
+
+    if (introStarted || introFinished) {
+        return;
+    }
+
+    introStarted = true;
+
+
+    /*
+       Add the started class.
+
+       This simultaneously:
+       - removes the grid
+       - fades the six emojis
+       - fades CLICK TO ENTER
+       - removes the dark overlay
+       - unblurs the video
+    */
+
+    introContainer.classList.add("started");
+
+
+    skipButton.style.display = "block";
+
+    requestAnimationFrame(() => {
+
+        skipButton.style.opacity = ".72";
+        skipButton.style.pointerEvents = "auto";
+
+    });
+
+
+    introVideo.muted = true;
+    introVideo.volume = 0;
+
+
+    introVideo.play().catch(error => {
+
+        console.log(
+            "Video could not start:",
+            error
+        );
+
+    });
+
+
+    startMusic();
+
+}
+
+
+/* =========================================================
+   CLICK TO ENTER
+========================================================= */
+
+clickToEnter.addEventListener(
+    "click",
+    startIntro
+);
+
+
+/* Keyboard support */
+
+clickToEnter.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" ||
+            event.key === " "
+        ) {
+
+            event.preventDefault();
+
+            startIntro();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FINISH INTRO
+========================================================= */
+
+function closeIntro() {
+
+    if (introFinished) {
+        return;
+    }
+
+    introFinished = true;
+
+
+    /*
+       Stop video immediately so it cannot continue
+       playing after the intro disappears.
+    */
+
+    introVideo.pause();
+
+
+    /*
+       Fade the entire intro screen out.
+       This prevents the website from suddenly flashing
+       underneath the video.
+    */
+
+    introContainer.style.opacity = "0";
+    introContainer.style.visibility = "hidden";
+
+
+    skipButton.style.opacity = "0";
+    skipButton.style.pointerEvents = "none";
+
+
+    /*
+       Wait for the fade to completely finish.
+       Only THEN remove the intro and unlock the website.
+    */
+
+    setTimeout(() => {
+
+        introContainer.style.display = "none";
+
+        skipButton.style.display = "none";
+
+
+        /*
+           Always return the website to the very top.
+        */
+
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+        });
+
+
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+
+
+        /*
+           Double-check after the browser finishes
+           the transition.
+        */
+
+        requestAnimationFrame(() => {
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant"
+            });
+
+        });
+
+    }, 950);
+
+}
+
+
+/* =========================================================
+   SKIP BUTTON
+========================================================= */
+
+skipButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        closeIntro();
+
+    }
+);
+
+
+/* =========================================================
+   VIDEO ENDED
+========================================================= */
+
+introVideo.addEventListener(
+    "ended",
+    function() {
+
+        closeIntro();
+
+    }
+);
+
+
+/* =========================================================
+   EXTRA SCROLL SAFETY
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function() {
+
+        if (!introFinished) {
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant"
+            });
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+reveals.forEach(
+    element =>
+        observer.observe(element)
+);
+
+
+/* =========================================================
+   IMAGE ERROR CHECK
+========================================================= */
+
+document
+    .querySelectorAll("img")
+    .forEach(img => {
+
+        img.addEventListener(
+            "error",
+            () => {
+
+                console.log(
+                    "Image not found:",
+                    img.src
+                );
+
+            }
+        );
+
+    });
+
+</script>
+
+</body>
+</html>
+```
