@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -548,29 +547,17 @@ body::before {
 
 #preload-status {
     position: absolute;
-
     z-index: 11;
-
     margin-top: 75px;
-
     color: rgba(255,255,255,.65);
-
     font-family: "IBM Plex Mono", monospace;
-
     font-size: .55rem;
-
     font-weight: 700;
-
     letter-spacing: .12em;
-
     text-transform: uppercase;
-
     text-align: center;
-
     pointer-events: none;
-
-    transition:
-        opacity .5s ease;
+    transition: opacity .5s ease;
 }
 
 #intro-container.ready #preload-status {
@@ -1925,10 +1912,11 @@ footer span:first-child {
 }
 
 </style>
-
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      INTRO VIDEO / ENTER SCREEN
@@ -1936,42 +1924,40 @@ footer span:first-child {
 
 <div id="intro-container">
 
-```
-<video
-    id="intro-video"
-    src="Video.mp4"
-    playsinline
-    preload="auto"
-    muted>
-</video>
+    <video
+        id="intro-video"
+        src="Video.mp4"
+        playsinline
+        preload="auto"
+        muted>
+    </video>
 
 
-<div class="intro-overlay">
+    <div class="intro-overlay">
 
-    <div class="intro-grid"></div>
-
-
-    <div class="intro-emojis">
-
-        <div class="intro-emoji">✦</div>
-        <div class="intro-emoji">♡</div>
-        <div class="intro-emoji">★</div>
-        <div class="intro-emoji">✧</div>
-        <div class="intro-emoji">💎</div>
-        <div class="intro-emoji">♡</div>
-
-    </div>
+        <div class="intro-grid"></div>
 
 
-    <div
-        id="click-to-enter"
-        role="button"
-        tabindex="0">
+        <div class="intro-emojis">
 
-        CLICK TO ENTER
+            <div class="intro-emoji">✦</div>
+            <div class="intro-emoji">♡</div>
+            <div class="intro-emoji">★</div>
+            <div class="intro-emoji">✧</div>
+            <div class="intro-emoji">💎</div>
+            <div class="intro-emoji">♡</div>
 
-    </div>
+        </div>
 
+
+        <div
+            id="click-to-enter"
+            role="button"
+            tabindex="0">
+
+            CLICK TO ENTER
+
+        </div>
 
     <!-- Preload status -->
 
@@ -1979,24 +1965,23 @@ footer span:first-child {
         LOADING MEDIA...
     </div>
 
-</div>
-```
+    </div>
 
 </div>
+
 
 <!-- =====================================================
      SKIP BUTTON
 ===================================================== -->
 
 <button
- id="skip-button"
- aria-label="Skip intro">
+    id="skip-button"
+    aria-label="Skip intro">
 
-```
-✦ SKIP ✦
-```
+    ✦ SKIP ✦
 
 </button>
+
 
 <!-- =====================================================
      MCBLING DECORATIONS
@@ -2004,33 +1989,24 @@ footer span:first-child {
 
 <div class="bling-bg">
 
-```
-<div class="bling">✦</div>
-<div class="bling">♡</div>
-<div class="bling">★</div>
-<div class="bling">✧</div>
-<div class="bling">💎</div>
-<div class="bling">♡</div>
-```
+    <div class="bling">✦</div>
+    <div class="bling">♡</div>
+    <div class="bling">★</div>
+    <div class="bling">✧</div>
+    <div class="bling">💎</div>
+    <div class="bling">♡</div>
 
 </div>
+
 
 <!-- =====================================================
      MUSIC
 ===================================================== -->
 
-<audio
- id="backgroundMusic"
- preload="auto"
- loop>
-
-```
-<source
-    src="Miside.mp3"
-    type="audio/mpeg">
-```
-
+<audio id="backgroundMusic" preload="auto" loop>
+    <source src="Miside.mp3" type="audio/mpeg">
 </audio>
+
 
 <!-- =====================================================
      WEBSITE
@@ -2038,56 +2014,56 @@ footer span:first-child {
 
 <div class="shell">
 
+
 <header class="topbar">
 
-```
-<div class="brand">
+    <div class="brand">
 
-    <div class="brand-mark"></div>
+        <div class="brand-mark"></div>
 
-    <div class="brand-text">
+        <div class="brand-text">
 
-        <strong>MEL ♡</strong>
+            <strong>MEL ♡</strong>
 
-        <span>
-            PERSONAL WEBSITE
-        </span>
+            <span>
+                PERSONAL WEBSITE
+            </span>
+
+        </div>
 
     </div>
 
-</div>
 
+    <nav>
 
-<nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#interests">Likes</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#skills">Stuff</a>
+        <a href="#contact">Find Me</a>
 
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#interests">Likes</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#skills">Stuff</a>
-    <a href="#contact">Find Me</a>
-
-</nav>
-```
+    </nav>
 
 </header>
 
+
 <div class="mini-marquee">
 
-```
-<span>
-    ✦♡ WELCOME TO MEL'S WORLD ♡✦
-    &nbsp;&nbsp; ★
-    &nbsp;&nbsp; THANKS FOR VISITING!!
-    &nbsp;&nbsp; 💎
-    &nbsp;&nbsp; ♡ STAY CUTE ♡
-    &nbsp;&nbsp; ✦
-</span>
-```
+    <span>
+        ✦♡ WELCOME TO MEL'S WORLD ♡✦
+        &nbsp;&nbsp; ★
+        &nbsp;&nbsp; THANKS FOR VISITING!!
+        &nbsp;&nbsp; 💎
+        &nbsp;&nbsp; ♡ STAY CUTE ♡
+        &nbsp;&nbsp; ✦
+    </span>
 
 </div>
 
+
 <main>
+
 
 <!-- =====================================================
      HOME
@@ -2097,134 +2073,134 @@ footer span:first-child {
     id="home"
     class="hero">
 
-```
-<div
-    class="hero-copy reveal">
 
-    <div class="eyebrow">
-        ✦ PERSONAL PROFILE // MEL ✦
-    </div>
+    <div
+        class="hero-copy reveal">
 
-    <h1>
-        MEL
-    </h1>
-
-    <p class="lead">
-
-        yo, I'm <span class="highlight">Mel ♡</span>.
-
-        I'm the kind of person who can go from
-        overthinking something stupid to getting
-        way too excited about a random project in
-        about five seconds. I joke around a lot,
-        get attached to the things I care about,
-        and somehow always end up learning or
-        messing with something new.
-
-        <span class="highlight">
-            Games, music, tech, anime, voice stuff,
-            sports and random projects
-        </span>
-        are basically my usual rotation.
-
-        I don't really have everything figured out
-        yet. I'm just building stuff, trying things,
-        meeting people and slowly figuring out what
-        I actually want to do with my life :P
-
-    </p>
-
-
-    <div class="actions">
-
-        <a
-            class="btn"
-            href="#about">
-            ♡ WHO AM I?
-        </a>
-
-        <a
-            class="btn"
-            href="#interests">
-            ✦ MY LIKES
-        </a>
-
-    </div>
-
-</div>
-
-
-<div
-    class="panel profile-card reveal">
-
-    <div class="card-title">
-
-        <span>
-            ♡ PROFILE DATA ♡
-        </span>
-
-        <span class="online">
-            ● ONLINE
-        </span>
-
-    </div>
-
-
-    <img
-        class="profile-image"
-        src="pfp.png"
-        alt="Mel's profile picture">
-
-
-    <div class="data-list">
-
-        <div class="data">
-            <span>Name</span>
-            <strong>Mel</strong>
+        <div class="eyebrow">
+            ✦ PERSONAL PROFILE // MEL ✦
         </div>
 
-        <div class="data">
-            <span>Pronouns</span>
-            <strong>He / Him</strong>
-        </div>
+        <h1>
+            MEL
+        </h1>
 
-        <div class="data">
-            <span>Age</span>
-            <strong>17</strong>
-        </div>
+        <p class="lead">
 
-        <div class="data">
-            <span>Personality</span>
-            <strong>INFJ-T</strong>
-        </div>
+            yo, I'm <span class="highlight">Mel ♡</span>.
 
-        <div class="data">
-            <span>Birthday</span>
-            <strong>02 DEC</strong>
-        </div>
+            I'm the kind of person who can go from
+            overthinking something stupid to getting
+            way too excited about a random project in
+            about five seconds. I joke around a lot,
+            get attached to the things I care about,
+            and somehow always end up learning or
+            messing with something new.
 
-        <div class="data">
-            <span>Status</span>
-            <strong>Doing My Thing ♡</strong>
+            <span class="highlight">
+                Games, music, tech, anime, voice stuff,
+                sports and random projects
+            </span>
+            are basically my usual rotation.
+
+            I don't really have everything figured out
+            yet. I'm just building stuff, trying things,
+            meeting people and slowly figuring out what
+            I actually want to do with my life :P
+
+        </p>
+
+
+        <div class="actions">
+
+            <a
+                class="btn"
+                href="#about">
+                ♡ WHO AM I?
+            </a>
+
+            <a
+                class="btn"
+                href="#interests">
+                ✦ MY LIKES
+            </a>
+
         </div>
 
     </div>
 
 
-    <div class="internet-box">
+    <div
+        class="panel profile-card reveal">
 
-        ♡ CURRENT STATUS ♡<br>
+        <div class="card-title">
 
-        <strong>
-            ✦ probably playing games ✦
-        </strong>
+            <span>
+                ♡ PROFILE DATA ♡
+            </span>
+
+            <span class="online">
+                ● ONLINE
+            </span>
+
+        </div>
+
+
+        <img
+            class="profile-image"
+            src="pfp.png"
+            alt="Mel's profile picture">
+
+
+        <div class="data-list">
+
+            <div class="data">
+                <span>Name</span>
+                <strong>Mel</strong>
+            </div>
+
+            <div class="data">
+                <span>Pronouns</span>
+                <strong>He / Him</strong>
+            </div>
+
+            <div class="data">
+                <span>Age</span>
+                <strong>17</strong>
+            </div>
+
+            <div class="data">
+                <span>Personality</span>
+                <strong>INFJ-T</strong>
+            </div>
+
+            <div class="data">
+                <span>Birthday</span>
+                <strong>02 DEC</strong>
+            </div>
+
+            <div class="data">
+                <span>Status</span>
+                <strong>Doing My Thing ♡</strong>
+            </div>
+
+        </div>
+
+
+        <div class="internet-box">
+
+            ♡ CURRENT STATUS ♡<br>
+
+            <strong>
+                ✦ probably playing games ✦
+            </strong>
+
+        </div>
 
     </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- =====================================================
      ABOUT
@@ -2234,90 +2210,89 @@ footer span:first-child {
     id="about"
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        01 // ♡
-    </span>
+        <span class="section-index">
+            01 // ♡
+        </span>
 
-    <h2>
-        About Me
-    </h2>
+        <h2>
+            About Me
+        </h2>
 
-</div>
-
-
-<div class="about-grid">
-
-    <article class="panel copy-panel">
-
-        <p>
-            I'm pretty easy to read once I'm
-            comfortable: I'll joke around, ramble
-            about whatever is on my mind and probably
-            send you some completely unnecessary
-            reaction 😭.
-        </p>
-
-        <p>
-            I can be quiet or reserved at first,
-            but once I actually click with someone,
-            good luck getting me to shut up.
-        </p>
-
-        <p>
-            I care a lot about the people close to
-            me. I like making people laugh, helping
-            when I can and doing little things that
-            make the people around me happy.
-        </p>
-
-        <p>
-            And yes, I'm still somehow a little
-            chaotic gremlin underneath all that.
-        </p>
-
-    </article>
+    </div>
 
 
-    <aside class="panel copy-panel">
+    <div class="about-grid">
 
-        <div class="data-list">
+        <article class="panel copy-panel">
 
-            <div class="data">
-                <span>Vibe</span>
-                <strong>Soft Gremlin ♡</strong>
+            <p>
+                I'm pretty easy to read once I'm
+                comfortable: I'll joke around, ramble
+                about whatever is on my mind and probably
+                send you some completely unnecessary
+                reaction 😭.
+            </p>
+
+            <p>
+                I can be quiet or reserved at first,
+                but once I actually click with someone,
+                good luck getting me to shut up.
+            </p>
+
+            <p>
+                I care a lot about the people close to
+                me. I like making people laugh, helping
+                when I can and doing little things that
+                make the people around me happy.
+            </p>
+
+            <p>
+                And yes, I'm still somehow a little
+                chaotic gremlin underneath all that.
+            </p>
+
+        </article>
+
+
+        <aside class="panel copy-panel">
+
+            <div class="data-list">
+
+                <div class="data">
+                    <span>Vibe</span>
+                    <strong>Soft Gremlin ♡</strong>
+                </div>
+
+                <div class="data">
+                    <span>Social Mode</span>
+                    <strong>Quiet → YAP MODE</strong>
+                </div>
+
+                <div class="data">
+                    <span>Energy</span>
+                    <strong>Randomly Appears</strong>
+                </div>
+
+                <div class="data">
+                    <span>Comfort</span>
+                    <strong>Games + My Setup</strong>
+                </div>
+
+                <div class="data">
+                    <span>Current Quest</span>
+                    <strong>Figure Life Out :P</strong>
+                </div>
+
             </div>
 
-            <div class="data">
-                <span>Social Mode</span>
-                <strong>Quiet → YAP MODE</strong>
-            </div>
+        </aside>
 
-            <div class="data">
-                <span>Energy</span>
-                <strong>Randomly Appears</strong>
-            </div>
-
-            <div class="data">
-                <span>Comfort</span>
-                <strong>Games + My Setup</strong>
-            </div>
-
-            <div class="data">
-                <span>Current Quest</span>
-                <strong>Figure Life Out :P</strong>
-            </div>
-
-        </div>
-
-    </aside>
-
-</div>
-```
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      LIKES
@@ -2327,143 +2302,142 @@ footer span:first-child {
     id="interests"
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        02 // ✦
-    </span>
+        <span class="section-index">
+            02 // ✦
+        </span>
 
-    <h2>
-        Things I Like
-    </h2>
+        <h2>
+            Things I Like
+        </h2>
 
-</div>
-
-
-<div class="interests-grid">
+    </div>
 
 
-    <article class="panel interest">
-
-        <div class="interest-number">
-            01 / PEOPLE ♡
-        </div>
-
-        <h3>
-            My People
-        </h3>
-
-        <p>
-            I like people who actually bring energy
-            into a friendship. Give me something to
-            talk about and I'll probably run with it.
-        </p>
-
-    </article>
+    <div class="interests-grid">
 
 
-    <article class="panel interest">
+        <article class="panel interest">
 
-        <div class="interest-number">
-            02 / CAT ♡
-        </div>
+            <div class="interest-number">
+                01 / PEOPLE ♡
+            </div>
 
-        <h3>
-            My Cats
-        </h3>
+            <h3>
+                My People
+            </h3>
 
-        <p>
-            Cats are automatically allowed to
-            occupy 90% of my attention. I don't make
-            the rules.
-        </p>
+            <p>
+                I like people who actually bring energy
+                into a friendship. Give me something to
+                talk about and I'll probably run with it.
+            </p>
 
-    </article>
-
-
-    <article class="panel interest">
-
-        <div class="interest-number">
-            03 / GAMES ✦
-        </div>
-
-        <h3>
-            Games
-        </h3>
-
-        <p>
-            Roblox, Minecraft, Trailmakers, NIKKE,
-            Spider-Man, and whatever game randomly
-            grabs my attention that week.
-        </p>
-
-    </article>
+        </article>
 
 
-    <article class="panel interest">
+        <article class="panel interest">
 
-        <div class="interest-number">
-            04 / MEDIA ✧
-        </div>
+            <div class="interest-number">
+                02 / CAT ♡
+            </div>
 
-        <h3>
-            Anime & Stuff
-        </h3>
+            <h3>
+                My Cats
+            </h3>
 
-        <p>
-            I bounce between anime depending on my
-            mood. Blue Lock, Jujutsu Kaisen,
-            Chainsaw Man, Re:Zero, Tensura and
-            Lookism/Viral Hit are some of the stuff
-            that has stuck with me.
-        </p>
+            <p>
+                Cats are automatically allowed to
+                occupy 90% of my attention. I don't make
+                the rules.
+            </p>
 
-    </article>
+        </article>
 
 
-    <article class="panel interest">
+        <article class="panel interest">
 
-        <div class="interest-number">
-            05 / CREATIVE ♡
-        </div>
+            <div class="interest-number">
+                03 / GAMES ✦
+            </div>
 
-        <h3>
-            Creative Stuff
-        </h3>
+            <h3>
+                Games
+            </h3>
 
-        <p>
-            I like messing with voices, audio,
-            websites, little tech projects and
-            anything where I can make something work
-            and then immediately want to improve it.
-        </p>
+            <p>
+                Roblox, Minecraft, Trailmakers, NIKKE,
+                Spider-Man, and whatever game randomly
+                grabs my attention that week.
+            </p>
 
-    </article>
+        </article>
 
 
-    <article class="panel interest">
+        <article class="panel interest">
 
-        <div class="interest-number">
-            06 / CUTE THINGS ☆
-        </div>
+            <div class="interest-number">
+                04 / MEDIA ✧
+            </div>
 
-        <h3>
-            Cute Stuff
-        </h3>
+            <h3>
+                Anime & Stuff
+            </h3>
 
-        <p>
-            Cute things, flowers, comfy stuff,
-            my room/setup and the random little
-            things I end up getting attached to 😭.
-        </p>
+            <p>
+                I bounce between anime depending on my
+                mood. Blue Lock, Jujutsu Kaisen,
+                Chainsaw Man, Re:Zero, Tensura and
+                Lookism/Viral Hit are some of the stuff
+                that has stuck with me.
+            </p>
 
-    </article>
+        </article>
 
-</div>
-```
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                05 / CREATIVE ♡
+            </div>
+
+            <h3>
+                Creative Stuff
+            </h3>
+
+            <p>
+                I like messing with voices, audio,
+                websites, little tech projects and
+                anything where I can make something work
+                and then immediately want to improve it.
+            </p>
+
+        </article>
+
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                06 / CUTE THINGS ☆
+            </div>
+
+            <h3>
+                Cute Stuff
+            </h3>
+
+            <p>
+                Cute things, flowers, comfy stuff,
+                my room/setup and the random little
+                things I end up getting attached to 😭.
+            </p>
+
+        </article>
+
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      GALLERY
@@ -2473,77 +2447,76 @@ footer span:first-child {
     id="gallery"
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        03 // 📸
-    </span>
+        <span class="section-index">
+            03 // 📸
+        </span>
 
-    <h2>
-        My Gallery ♡
-    </h2>
-
-</div>
-
-
-<div class="image-grid">
-
-    <div class="image-box">
-
-        <img
-            src="image1.jpg"
-            alt="Personal image">
-
-        <div class="image-label">
-            Main ♡
-        </div>
+        <h2>
+            My Gallery ♡
+        </h2>
 
     </div>
 
 
-    <div class="image-box">
+    <div class="image-grid">
 
-        <img
-            src="image2.jpg"
-            alt="Personal image">
+        <div class="image-box">
 
-        <div class="image-label">
-            Random
+            <img
+                src="image1.jpg"
+                alt="Personal image">
+
+            <div class="image-label">
+                Main ♡
+            </div>
+
+        </div>
+
+
+        <div class="image-box">
+
+            <img
+                src="image2.jpg"
+                alt="Personal image">
+
+            <div class="image-label">
+                Random
+            </div>
+
+        </div>
+
+
+        <div class="image-box">
+
+            <img
+                src="image3.jpg"
+                alt="Personal image">
+
+            <div class="image-label">
+                Archive ✦
+            </div>
+
+        </div>
+
+
+        <div class="image-box">
+
+            <img
+                src="image4.jpg"
+                alt="Profile">
+
+            <div class="image-label">
+                Me ♡
+            </div>
+
         </div>
 
     </div>
-
-
-    <div class="image-box">
-
-        <img
-            src="image3.jpg"
-            alt="Personal image">
-
-        <div class="image-label">
-            Archive ✦
-        </div>
-
-    </div>
-
-
-    <div class="image-box">
-
-        <img
-            src="image4.jpg"
-            alt="Profile">
-
-        <div class="image-label">
-            Me ♡
-        </div>
-
-    </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- =====================================================
      GOALS / STUFF
@@ -2553,92 +2526,91 @@ footer span:first-child {
     id="skills"
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        04 // ☆
-    </span>
+        <span class="section-index">
+            04 // ☆
+        </span>
 
-    <h2>
-        What I'm Up To
-    </h2>
+        <h2>
+            What I'm Up To
+        </h2>
 
-</div>
-
-
-<div class="skills-grid">
+    </div>
 
 
-    <article class="panel skill">
-
-        <h3>
-            Voice Acting ✦
-        </h3>
-
-        <p>
-            I'm still messing around with voice
-            acting and different voices, but I want
-            to actually get good enough that it
-            sounds intentional instead of "Mel
-            pressing random buttons" lol.
-        </p>
-
-    </article>
+    <div class="skills-grid">
 
 
-    <article class="panel skill">
+        <article class="panel skill">
 
-        <h3>
-            Becoming Better ♡
-        </h3>
+            <h3>
+                Voice Acting ✦
+            </h3>
 
-        <p>
-            I want to keep growing up without
-            losing the parts of myself that make me,
-            well, me. Being kinder, more dependable
-            and better at handling life is the goal.
-        </p>
+            <p>
+                I'm still messing around with voice
+                acting and different voices, but I want
+                to actually get good enough that it
+                sounds intentional instead of "Mel
+                pressing random buttons" lol.
+            </p>
 
-    </article>
-
-
-    <article class="panel skill">
-
-        <h3>
-            House Husband Arc ✧
-        </h3>
-
-        <p>
-            I want to be the kind of person who can
-            actually take care of a home: cook,
-            fix basic stuff, keep things organised
-            and not immediately summon someone else
-            when something breaks.
-        </p>
-
-    </article>
+        </article>
 
 
-    <article class="panel skill">
+        <article class="panel skill">
 
-        <h3>
-            Learning Stuff ☆
-        </h3>
+            <h3>
+                Becoming Better ♡
+            </h3>
 
-        <p>
-            If something makes me go "wait, how does
-            that even work?", there's a decent chance
-            I'll end up researching it or trying to
-            build/fix it myself.
-        </p>
+            <p>
+                I want to keep growing up without
+                losing the parts of myself that make me,
+                well, me. Being kinder, more dependable
+                and better at handling life is the goal.
+            </p>
 
-    </article>
+        </article>
 
-</div>
-```
+
+        <article class="panel skill">
+
+            <h3>
+                House Husband Arc ✧
+            </h3>
+
+            <p>
+                I want to be the kind of person who can
+                actually take care of a home: cook,
+                fix basic stuff, keep things organised
+                and not immediately summon someone else
+                when something breaks.
+            </p>
+
+        </article>
+
+
+        <article class="panel skill">
+
+            <h3>
+                Learning Stuff ☆
+            </h3>
+
+            <p>
+                If something makes me go "wait, how does
+                that even work?", there's a decent chance
+                I'll end up researching it or trying to
+                build/fix it myself.
+            </p>
+
+        </article>
+
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      BEFORE YOU DM
@@ -2647,52 +2619,51 @@ footer span:first-child {
 <section
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        05 // 💬
-    </span>
+        <span class="section-index">
+            05 // 💬
+        </span>
 
-    <h2>
-        Before You DM
-    </h2>
+        <h2>
+            Before You DM
+        </h2>
 
-</div>
+    </div>
 
 
-<div class="panel copy-panel">
+    <div class="panel copy-panel">
 
-    <p>
-        I can be awkward at first, especially if
-        we don't know each other yet. Once I'm
-        comfortable though, the filter starts
-        disappearing pretty quickly 😭.
-    </p>
+        <p>
+            I can be awkward at first, especially if
+            we don't know each other yet. Once I'm
+            comfortable though, the filter starts
+            disappearing pretty quickly 😭.
+        </p>
 
-    <p>
-        If you DM me, actually give me something to
-        respond to. I don't need a perfectly written
-        essay, just don't make me perform CPR on a
-        conversation consisting of "k" and "lol".
-    </p>
+        <p>
+            If you DM me, actually give me something to
+            respond to. I don't need a perfectly written
+            essay, just don't make me perform CPR on a
+            conversation consisting of "k" and "lol".
+        </p>
 
-    <p>
-        I like real conversations, random topics,
-        stupid jokes and people who can match the
-        energy instead of forcing it.
-    </p>
+        <p>
+            I like real conversations, random topics,
+            stupid jokes and people who can match the
+            energy instead of forcing it.
+        </p>
 
-    <p>
-        Games, VC, going out, sharing random things —
-        I'm down for pretty much anything as long as
-        we're both actually enjoying ourselves.
-    </p>
+        <p>
+            Games, VC, going out, sharing random things —
+            I'm down for pretty much anything as long as
+            we're both actually enjoying ourselves.
+        </p>
 
-</div>
-```
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      RELATIONSHIPS / PERSONAL
@@ -2701,76 +2672,75 @@ footer span:first-child {
 <section
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        06 // ♡
-    </span>
+        <span class="section-index">
+            06 // ♡
+        </span>
 
-    <h2>
-        Random Mel Lore
-    </h2>
+        <h2>
+            Random Mel Lore
+        </h2>
 
-</div>
-
-
-<div class="about-grid">
-
-    <article class="panel copy-panel">
-
-        <p>
-            I have a girlfriend, and yes, I am
-            extremely normal about how much I adore
-            her 😭♡.
-        </p>
-
-        <p>
-            I tend to show I care by spending time
-            with people, helping out, making things
-            for them or just being there when they
-            need someone.
-        </p>
-
-        <p>
-            I also genuinely enjoy cooking for people.
-            If someone likes what I made, that's
-            basically a tiny achievement unlocked.
-        </p>
-
-    </article>
+    </div>
 
 
-    <aside class="panel copy-panel">
+    <div class="about-grid">
 
-        <p>
-            Apparently I make cute noises when I
-            sleep. I deny everything.
-        </p>
+        <article class="panel copy-panel">
 
-        <p>
-            My cats are MJ, Jacob and JJ, and they
-            have absolutely no idea how much they
-            run the household.
-        </p>
+            <p>
+                I have a girlfriend, and yes, I am
+                extremely normal about how much I adore
+                her 😭♡.
+            </p>
 
-        <p>
-            I also have an avocado plushie that
-            apparently gets more affection than it
-            deserves.
-        </p>
+            <p>
+                I tend to show I care by spending time
+                with people, helping out, making things
+                for them or just being there when they
+                need someone.
+            </p>
 
-        <p>
-            Miranda is responsible for most of these
-            allegations btw 😭.
-        </p>
+            <p>
+                I also genuinely enjoy cooking for people.
+                If someone likes what I made, that's
+                basically a tiny achievement unlocked.
+            </p>
 
-    </aside>
+        </article>
 
-</div>
-```
+
+        <aside class="panel copy-panel">
+
+            <p>
+                Apparently I make cute noises when I
+                sleep. I deny everything.
+            </p>
+
+            <p>
+                My cats are MJ, Jacob and JJ, and they
+                have absolutely no idea how much they
+                run the household.
+            </p>
+
+            <p>
+                I also have an avocado plushie that
+                apparently gets more affection than it
+                deserves.
+            </p>
+
+            <p>
+                Miranda is responsible for most of these
+                allegations btw 😭.
+            </p>
+
+        </aside>
+
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      DISLIKES
@@ -2779,82 +2749,81 @@ footer span:first-child {
 <section
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        07 // 🚫
-    </span>
+        <span class="section-index">
+            07 // 🚫
+        </span>
 
-    <h2>
-        Things I Don't Like
-    </h2>
+        <h2>
+            Things I Don't Like
+        </h2>
 
-</div>
-
-
-<div class="interests-grid">
+    </div>
 
 
-    <article class="panel interest">
-
-        <div class="interest-number">
-            01 / PEOPLE
-        </div>
-
-        <h3>
-            Rude People
-        </h3>
-
-        <p>
-            Being rude just to be rude is an instant
-            way to make me lose interest in talking.
-        </p>
-
-    </article>
+    <div class="interests-grid">
 
 
-    <article class="panel interest">
+        <article class="panel interest">
 
-        <div class="interest-number">
-            02 / CONVOS
-        </div>
+            <div class="interest-number">
+                01 / PEOPLE
+            </div>
 
-        <h3>
-            Dry Texting
-        </h3>
+            <h3>
+                Rude People
+            </h3>
 
-        <p>
-            I can yap, but I shouldn't have to be
-            the entire conversation by myself 😭.
-        </p>
+            <p>
+                Being rude just to be rude is an instant
+                way to make me lose interest in talking.
+            </p>
 
-    </article>
+        </article>
 
 
-    <article class="panel interest">
+        <article class="panel interest">
 
-        <div class="interest-number">
-            03 / AWKWARD
-        </div>
+            <div class="interest-number">
+                02 / CONVOS
+            </div>
 
-        <h3>
-            Being Ignored
-        </h3>
+            <h3>
+                Dry Texting
+            </h3>
 
-        <p>
-            If the vibe suddenly changes, I'll notice.
-            You don't have to talk 24/7, just don't
-            randomly make me feel like I'm talking to
-            a wall.
-        </p>
+            <p>
+                I can yap, but I shouldn't have to be
+                the entire conversation by myself 😭.
+            </p>
 
-    </article>
+        </article>
 
-</div>
-```
+
+        <article class="panel interest">
+
+            <div class="interest-number">
+                03 / AWKWARD
+            </div>
+
+            <h3>
+                Being Ignored
+            </h3>
+
+            <p>
+                If the vibe suddenly changes, I'll notice.
+                You don't have to talk 24/7, just don't
+                randomly make me feel like I'm talking to
+                a wall.
+            </p>
+
+        </article>
+
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      DNI
@@ -2863,47 +2832,46 @@ footer span:first-child {
 <section
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        08 // ⚠
-    </span>
+        <span class="section-index">
+            08 // ⚠
+        </span>
 
-    <h2>
-        DNI
-    </h2>
+        <h2>
+            DNI
+        </h2>
 
-</div>
+    </div>
 
 
-<div class="panel copy-panel">
+    <div class="panel copy-panel">
 
-    <p>
-        Basic rule: don't be an asshole for fun 😭.
-    </p>
+        <p>
+            Basic rule: don't be an asshole for fun 😭.
+        </p>
 
-    <p>
-        I'm not interested in toxic behaviour,
-        harassment, creepy behaviour or people who
-        show up just to start drama.
-    </p>
+        <p>
+            I'm not interested in toxic behaviour,
+            harassment, creepy behaviour or people who
+            show up just to start drama.
+        </p>
 
-    <p>
-        This is my personal corner of the internet,
-        not a debate stage. Keep the unnecessary
-        arguments somewhere else.
-    </p>
+        <p>
+            This is my personal corner of the internet,
+            not a debate stage. Keep the unnecessary
+            arguments somewhere else.
+        </p>
 
-    <p>
-        Treat people fairly and we're probably fine.
-        Come looking for problems and I'm out.
-    </p>
+        <p>
+            Treat people fairly and we're probably fine.
+            Come looking for problems and I'm out.
+        </p>
 
-</div>
-```
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      CONTACT
@@ -2913,132 +2881,132 @@ footer span:first-child {
     id="contact"
     class="reveal">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-    <span class="section-index">
-        09 // ♡
-    </span>
+        <span class="section-index">
+            09 // ♡
+        </span>
 
-    <h2>
-        Find Me
-    </h2>
+        <h2>
+            Find Me
+        </h2>
 
-</div>
-
-
-<div class="contact-grid">
+    </div>
 
 
-    <div class="panel contact">
+    <div class="contact-grid">
 
-        <div class="contact-row">
 
-            <span>
-                Discord
-            </span>
+        <div class="panel contact">
 
-            <span>
-                melsocool
-            </span>
+            <div class="contact-row">
+
+                <span>
+                    Discord
+                </span>
+
+                <span>
+                    melsocool
+                </span>
+
+            </div>
+
+
+            <div class="contact-row">
+
+                <span>
+                    Roblox
+                </span>
+
+                <span>
+                    1ts_Ryota
+                </span>
+
+            </div>
+
+
+            <div class="contact-row">
+
+                <span>
+                    Steam
+                </span>
+
+                <span>
+                    Litterally_Mel
+                </span>
+
+            </div>
 
         </div>
 
 
-        <div class="contact-row">
+        <div class="panel contact">
 
-            <span>
-                Roblox
-            </span>
+            <p style="
+                color:#541638;
+                font-size:.82rem;
+                line-height:1.9;
+                margin-top:0;
+            ">
 
-            <span>
-                1ts_Ryota
-            </span>
+                If you actually wanna talk to me,
+                just say hi and give me something to
+                work with. That's genuinely enough.
 
-        </div>
+            </p>
 
+            <p style="
+                color:#8a2b5d;
+                font-size:.72rem;
+                line-height:1.8;
+            ">
 
-        <div class="contact-row">
+                Once I'm comfortable, the yap has
+                officially been unlocked.
 
-            <span>
-                Steam
-            </span>
+                You have been warned.
 
-            <span>
-                Litterally_Mel
-            </span>
+            </p>
 
         </div>
 
     </div>
 
 
-    <div class="panel contact">
+    <div class="internet-box" style="
+        margin-top:25px;
+        color:#ff9dd1;
+    ">
 
-        <p style="
-            color:#541638;
-            font-size:.82rem;
-            line-height:1.9;
-            margin-top:0;
-        ">
+        ✦ ♡ THANK YOU FOR VISITING MEL'S WORLD ♡ ✦<br>
 
-            If you actually wanna talk to me,
-            just say hi and give me something to
-            work with. That's genuinely enough.
-
-        </p>
-
-        <p style="
-            color:#8a2b5d;
-            font-size:.72rem;
-            line-height:1.8;
-        ">
-
-            Once I'm comfortable, the yap has
-            officially been unlocked.
-
-            You have been warned.
-
-        </p>
+        <strong>
+            YOU SURVIVED THE MEL LORE DUMP
+        </strong>
 
     </div>
-
-</div>
-
-
-<div class="internet-box" style="
-    margin-top:25px;
-    color:#ff9dd1;
-">
-
-    ✦ ♡ THANK YOU FOR VISITING MEL'S WORLD ♡ ✦<br>
-
-    <strong>
-        YOU SURVIVED THE MEL LORE DUMP
-    </strong>
-
-</div>
-```
 
 </section>
 
+
 </main>
+
 
 <footer>
 
-```
-<span>
-    ♡ MEL // PERSONAL WORLD
-</span>
+    <span>
+        ♡ MEL // PERSONAL WORLD
+    </span>
 
-<span>
-    2026 // STILL FIGURING THINGS OUT ✦
-</span>
-```
+    <span>
+        2026 // STILL FIGURING THINGS OUT ✦
+    </span>
 
 </footer>
 
+
 </div>
+
 
 <!-- =====================================================
      JAVASCRIPT
@@ -3069,6 +3037,12 @@ const preloadStatus =
    INITIAL STATE
 ========================================================= */
 
+/*
+   Lock the page completely while the intro is active.
+   The intro itself is already covering the entire website,
+   so there is no flash of the website underneath.
+*/
+
 document.documentElement.style.overflow = "hidden";
 document.body.style.overflow = "hidden";
 
@@ -3086,20 +3060,15 @@ introVideo.muted = true;
 introVideo.volume = 0;
 
 
-/*
-   IMPORTANT:
-
-   Explicitly tell both media elements to load now.
-
-   preload="auto" asks the browser to preload,
-   while load() makes the request happen immediately.
-*/
-
 introVideo.preload = "auto";
 backgroundMusic.preload = "auto";
 
 introVideo.load();
 backgroundMusic.load();
+
+backgroundMusic.pause();
+backgroundMusic.currentTime = 0;
+backgroundMusic.loop = true;
 
 
 let introStarted = false;
@@ -3115,44 +3084,17 @@ let mediaReady = false;
    MEDIA PRELOAD SYSTEM
 ========================================================= */
 
-/*
-   Video:
-
-   HAVE_FUTURE_DATA means the browser has enough data
-   to continue playback for at least a little while.
-
-   HAVE_ENOUGH_DATA is even better, but browsers are not
-   required to report it consistently.
-
-   We therefore consider HAVE_FUTURE_DATA enough to allow
-   the intro to start.
-*/
-
 function checkVideoReady() {
 
     if (
         introVideo.readyState >=
         HTMLMediaElement.HAVE_FUTURE_DATA
     ) {
-
         videoReady = true;
-
     }
 
     checkMediaReady();
-
 }
-
-
-/*
-   Audio:
-
-   We don't need the entire song loaded before starting.
-   We only need enough data for playback to begin.
-
-   This avoids unnecessarily delaying the user if the
-   music file is large.
-*/
 
 function checkAudioReady() {
 
@@ -3160,166 +3102,61 @@ function checkAudioReady() {
         backgroundMusic.readyState >=
         HTMLMediaElement.HAVE_FUTURE_DATA
     ) {
-
         audioReady = true;
-
     }
 
     checkMediaReady();
-
 }
-
-
-/*
-   Both pieces of media must be ready.
-
-   The intro will not start automatically.
-   The user still has to click CLICK TO ENTER.
-*/
 
 function checkMediaReady() {
 
-    if (
-        videoReady &&
-        audioReady
-    ) {
-
+    if (videoReady && audioReady) {
         mediaReady = true;
-
         introContainer.classList.add("ready");
-
-        preloadStatus.textContent =
-            "MEDIA READY";
-
+        preloadStatus.textContent = "MEDIA READY";
     }
-
 }
 
+introVideo.addEventListener("loadeddata", checkVideoReady);
+introVideo.addEventListener("canplay", checkVideoReady);
+introVideo.addEventListener("canplaythrough", checkVideoReady);
 
-/* =========================================================
-   MEDIA EVENTS
-========================================================= */
+backgroundMusic.addEventListener("loadeddata", checkAudioReady);
+backgroundMusic.addEventListener("canplay", checkAudioReady);
+backgroundMusic.addEventListener("canplaythrough", checkAudioReady);
 
-introVideo.addEventListener(
-    "loadeddata",
-    checkVideoReady
-);
+introVideo.addEventListener("stalled", function() {
+    if (!introStarted) {
+        introVideo.load();
+    }
+});
 
-introVideo.addEventListener(
-    "canplay",
-    checkVideoReady
-);
+backgroundMusic.addEventListener("stalled", function() {
+    if (!musicStarted) {
+        backgroundMusic.load();
+    }
+});
 
-introVideo.addEventListener(
-    "canplaythrough",
-    checkVideoReady
-);
+setTimeout(function() {
 
-backgroundMusic.addEventListener(
-    "loadeddata",
-    checkAudioReady
-);
+    if (!mediaReady) {
 
-backgroundMusic.addEventListener(
-    "canplay",
-    checkAudioReady
-);
-
-backgroundMusic.addEventListener(
-    "canplaythrough",
-    checkAudioReady
-);
-
-
-/*
-   If the browser says the media is stalled while loading,
-   ask it to continue loading.
-*/
-
-introVideo.addEventListener(
-    "stalled",
-    function() {
-
-        if (!introStarted) {
-
-            introVideo.load();
-
+        if (introVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+            videoReady = true;
         }
 
-    }
-);
-
-backgroundMusic.addEventListener(
-    "stalled",
-    function() {
-
-        if (!musicStarted) {
-
-            backgroundMusic.load();
-
+        if (backgroundMusic.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+            audioReady = true;
         }
 
-    }
-);
-
-
-/* =========================================================
-   PRELOAD FALLBACK
-========================================================= */
-
-/*
-   Some browsers don't reliably fire canplaythrough.
-
-   After 15 seconds, don't leave the user trapped on
-   the loading screen forever.
-
-   If the video has enough data, allow it.
-   Otherwise the normal click handler can still attempt
-   playback.
-*/
-
-setTimeout(
-    function() {
+        checkMediaReady();
 
         if (!mediaReady) {
-
-            if (
-                introVideo.readyState >=
-                HTMLMediaElement.HAVE_CURRENT_DATA
-            ) {
-
-                videoReady = true;
-
-            }
-
-            if (
-                backgroundMusic.readyState >=
-                HTMLMediaElement.HAVE_CURRENT_DATA
-            ) {
-
-                audioReady = true;
-
-            }
-
-            checkMediaReady();
-
-            /*
-               We never completely lock the website
-               because of a browser preload-reporting issue.
-            */
-
-            if (!mediaReady) {
-
-                preloadStatus.textContent =
-                    "READY TO START";
-
-            }
-
+            preloadStatus.textContent = "READY TO START";
         }
+    }
 
-    },
-    15000
-);
+}, 15000);
 
 
 /* =========================================================
@@ -3334,43 +3171,24 @@ function startMusic() {
 
     backgroundMusic.volume = 0.35;
 
-    /*
-       Make sure the audio element has something
-       ready to play before attempting playback.
-    */
-
     if (
         backgroundMusic.readyState <
         HTMLMediaElement.HAVE_CURRENT_DATA
     ) {
-
         backgroundMusic.load();
-
     }
 
     const playPromise =
         backgroundMusic.play();
 
     if (playPromise !== undefined) {
-
         playPromise
             .then(() => {
-
                 musicStarted = true;
-
             })
             .catch(() => {
 
                 musicStarted = false;
-
-                /*
-                   The click itself is the user gesture,
-                   so normally this should be allowed.
-
-                   If the browser still rejects playback,
-                   wait until enough audio has loaded and
-                   try again.
-                */
 
                 backgroundMusic.addEventListener(
                     "canplay",
@@ -3379,24 +3197,18 @@ function startMusic() {
                         backgroundMusic
                             .play()
                             .then(() => {
-
                                 musicStarted = true;
-
                             })
                             .catch(() => {});
 
-                        backgroundMusic
-                            .removeEventListener(
-                                "canplay",
-                                retryMusic
-                            );
-
+                        backgroundMusic.removeEventListener(
+                            "canplay",
+                            retryMusic
+                        );
                     },
                     { once: true }
                 );
-
             });
-
     }
 
 }
@@ -3442,30 +3254,17 @@ function startIntro() {
     introVideo.muted = true;
     introVideo.volume = 0;
 
-
-    /*
-       Make sure the video is positioned at the beginning.
-    */
-
     introVideo.currentTime = 0;
 
 
-    const playVideo =
-        introVideo.play();
+    introVideo.play().catch(error => {
 
+        console.log(
+            "Video could not start:",
+            error
+        );
 
-    if (playVideo !== undefined) {
-
-        playVideo.catch(error => {
-
-            console.log(
-                "Video could not start:",
-                error
-            );
-
-        });
-
-    }
+    });
 
 
     startMusic();
@@ -3505,99 +3304,40 @@ clickToEnter.addEventListener(
 
 
 /* =========================================================
-   VIDEO BUFFER RECOVERY
+   MEDIA BUFFER RECOVERY
 ========================================================= */
 
-/*
-   If the video temporarily runs out of buffered data,
-   don't immediately close the intro.
+introVideo.addEventListener("waiting", function() {
 
-   Wait for playback to become possible again.
-*/
-
-introVideo.addEventListener(
-    "waiting",
-    function() {
-
-        if (
-            introStarted &&
-            !introFinished
-        ) {
-
-            console.log(
-                "Video temporarily buffering..."
-            );
-
-        }
-
+    if (introStarted && !introFinished) {
+        console.log("Video temporarily buffering...");
     }
-);
 
+});
 
-/*
-   Once data becomes available again, resume playback.
-*/
+introVideo.addEventListener("canplay", function() {
 
-introVideo.addEventListener(
-    "canplay",
-    function() {
-
-        if (
-            introStarted &&
-            !introFinished &&
-            introVideo.paused
-        ) {
-
-            introVideo
-                .play()
-                .catch(() => {});
-
-        }
-
+    if (introStarted && !introFinished && introVideo.paused) {
+        introVideo.play().catch(() => {});
     }
-);
 
+});
 
-/* =========================================================
-   AUDIO BUFFER RECOVERY
-========================================================= */
+backgroundMusic.addEventListener("waiting", function() {
 
-backgroundMusic.addEventListener(
-    "waiting",
-    function() {
-
-        if (
-            musicStarted &&
-            !introFinished
-        ) {
-
-            console.log(
-                "Music temporarily buffering..."
-            );
-
-        }
-
+    if (musicStarted && !introFinished) {
+        console.log("Music temporarily buffering...");
     }
-);
 
-backgroundMusic.addEventListener(
-    "canplay",
-    function() {
+});
 
-        if (
-            musicStarted &&
-            backgroundMusic.paused &&
-            !introFinished
-        ) {
+backgroundMusic.addEventListener("canplay", function() {
 
-            backgroundMusic
-                .play()
-                .catch(() => {});
-
-        }
-
+    if (musicStarted && backgroundMusic.paused && !introFinished) {
+        backgroundMusic.play().catch(() => {});
     }
-);
+
+});
 
 
 /* =========================================================
@@ -3795,20 +3535,16 @@ document
 
     });
 
-
 /* =========================================================
    INITIAL MEDIA CHECK
 ========================================================= */
 
-/*
-   Run once immediately in case the browser has already
-   loaded enough data before the event listeners fired.
-*/
-
 checkVideoReady();
 checkAudioReady();
+
 
 </script>
 
 </body>
 </html>
+```
